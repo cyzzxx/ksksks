@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cuties</title>
+<link rel="stylesheet" href="videos.css">
+<link rel="icon" type="image/x-icon" href="assets/hart.png">
+</head>
+<body>
+    <button><a href="index.html">Back</a></button>
+
+   <div class="video-container">
+        <video id="video1" class="active" width="900" height="500" controls onended="videoEnded()">
+            <source src="vids/1.mp4" type="video/mp4">
+        </video>
+        <video id="video2" width="900" height="500" controls onended="videoEnded()">
+            <source src="vids/2.mp4" type="video/mp4">
+        </video>
+        <video id="video3" width="900" height="500" controls onended="videoEnded()">
+            <source src="vids/3.mp4" type="video/mp4">
+        </video>
+        <video id="video4" width="900" height="500" controls onended="videoEnded()">
+            <source src="vids/4.mp4" type="video/mp4">
+        </video>
+        <div class="prev" onclick="showPrev()">Prev</div>
+        <div class="next" onclick="showNext()">Next</div>
+    </div>
+
+    <script>
+        var currentVideo = 1;
+        var totalVideos = 4;
+        var isVideoPlaying = false;
+
+        function showPrev() {
+            if (currentVideo > 1) {
+                document.getElementById("video" + currentVideo).pause();
+                document.getElementById("video" + currentVideo).classList.remove("active");
+                currentVideo--;
+                document.getElementById("video" + currentVideo).classList.add("active");
+            }
+        }
+
+        function showNext() {
+            if (!isVideoPlaying && currentVideo < totalVideos) {
+                document.getElementById("video" + currentVideo).pause();
+                document.getElementById("video" + currentVideo).classList.remove("active");
+                currentVideo++;
+                document.getElementById("video" + currentVideo).classList.add("active");
+            }
+        }
+
+        function videoEnded() {
+            isVideoPlaying = false;
+        }
+
+        document.querySelectorAll('video').forEach(video => {
+            video.addEventListener('play', function() {
+                isVideoPlaying = true;
+            });
+            video.addEventListener('pause', function() {
+                isVideoPlaying = false;
+            });
+        });
+    </script>
+</body>
+</html>
