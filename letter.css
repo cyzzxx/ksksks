@@ -10,16 +10,19 @@ body {
 }
 
 
-button{
+    button{
+  position: absolute;
+  top: 10px; /* Adjusted top position */
+  left: 10px; /* Adjusted left position */
   text-transform: uppercase;
-  padding: 15px;
+  padding: 10px;
   border-radius: 10px;
   border: none;
-  margin-right: 20px;
   font-weight: bold;
   background-color: #012a4a;
   color: #ff8fab;
   transition-duration: 0.4s;
+  z-index: 1;
 }
 button a {
   text-decoration: none;
