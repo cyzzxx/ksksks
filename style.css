@@ -1,0 +1,80 @@
+body {
+  background-image: url('assets/lovet.png');
+  background-size: cover;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  color: white;
+ 
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.blinking-text {
+  animation: blink 1s infinite;
+  text-shadow: 0 0 10px red;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  font-size: 50px;
+  margin-top: -20px;
+}
+
+span {
+  display: block;
+  font-weight: bold; 
+  font-size: 20px;
+  font-family: monospace;
+  color: #30343f;
+  text-transform: uppercase;
+}
+button{
+  text-transform: uppercase;
+  margin-top: 30px;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  margin-right: 20px;
+  font-weight: bold;
+  background-color: #012a4a;
+  color: #ff8fab;
+  transition-duration: 0.4s;
+}
+button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button:hover{
+  background-color: maroon;
+  color: white;
+}
+/* Mobile responsive */
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 0 10px; /* Adjust padding for smaller screens */
+  }
+  
+  .blinking-text {
+    font-size: 30px; /* Decrease font size for smaller screens */
+  }
+  
+  span {
+    font-size: 16px; /* Decrease font size for smaller screens */
+  }
+  button{
+    margin-right: 0;
+  }
+}
+
+
